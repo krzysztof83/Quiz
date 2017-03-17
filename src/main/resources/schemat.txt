@@ -1,0 +1,5 @@
+1. podaj login:
+2. sprawdzić czy login jest w bazie danych.
+3a.tak-podaj haslo                  3b. nie: wybierz 1.zaluz konto lub 2. zakoncz
+4a. kliknij 1. zeby rozpoczac quiz / cokolwiek innego zeby wyjsc         4b-zaluz konto 4c-zakoncz
+5.
