@@ -16,6 +16,10 @@ public class UserService {
     private User user;
     private EntityManager entityManager;
 
+    public UserService(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
+
     public UserService(User user, EntityManager entityManager) {
         this.user = user;
         this.entityManager = entityManager;
@@ -108,6 +112,21 @@ public class UserService {
                 .createQuery("SELECT e.resultQuize FROM User e where login='" + user.getLogin() + "' ", ResultQuize.class);
         ResultQuize resultQuize = typedQuery.getSingleResult();
         return resultQuize;
+    }
+
+    public void showMyBestResult() {
+        ResultQuize resultQuize = getMyBestResult();
+        Integer result;
+        if (resultQuize == null) {
+            result = 0;
+        } else {
+            if (resultQuize.getQuizeResult() == null) {
+                result = 0;
+            } else {
+                result = resultQuize.getQuizeResult();
+            }
+        }
+        System.out.println("your best result is: " + result);
     }
 
     public List<User> getAllUserList() {

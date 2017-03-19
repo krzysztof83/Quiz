@@ -38,11 +38,6 @@ public class User {
         return login;
     }
 
-    public User setLogin(String login) {
-        this.login = login;
-        return this;
-    }
-
     public String getPassword() {
         return password;
     }
